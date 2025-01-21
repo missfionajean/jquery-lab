@@ -1,12 +1,12 @@
 // function definitions
-const container = (id, button, counter) => {
+const cookieBox = (id, button, counter) => {
 	$(button).click(function () {
 		counter += 1;
 		$(id).text(counter);
 	});
 };
 
-const buyContainer = (button, box) => {
+const addBox = (button, box) => {
     $(button).click(function () {
 		$(box).show()
         $(this).hide()
@@ -25,13 +25,13 @@ $(document).ready(function () {
     let otCount = 0;
 
     // event handlers to add new boxes
-    buyContainer("#buy-sg", "#sg-box")
-    buyContainer("#buy-sn", "#sn-box")
-    buyContainer("#buy-ot", "#ot-box")
+    addBox("#buy-sg", "#sg-box")
+    addBox("#buy-sn", "#sn-box")
+    addBox("#buy-ot", "#ot-box")
 
     // set event handlers for cookie boxes
-	container("#cc-count", "#cc-btn", ccCount);
-	container("#sg-count", "#sg-btn", sgCount);
-	container("#sn-count", "#sn-btn", snCount);
-	container("#ot-count", "#ot-btn", otCount);
+	cookieBox("#cc-count", "#cc-btn", ccCount);
+	cookieBox("#sg-count", "#sg-btn", sgCount);
+	cookieBox("#sn-count", "#sn-btn", snCount);
+	cookieBox("#ot-count", "#ot-btn", otCount);
 });
