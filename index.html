@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script
+			defer
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+		></script>
+		<script defer src="app.js"></script>
+		<title>Clicker</title>
+	</head>
+	<body>
+		<!-- static info -->
+		<h1>Cookie Clicker</h1>
+		<p>Click "Bake" to make cookies! Spend them on stuff! Bake more cookies!</p>
+
+        <!-- left side of browser window -->
+		<section id="cookie-column">
+			<!-- starting div for chocolate chip -->
+			<div id="cc-box">
+				<h2>Chocolate Chip:</h2>
+				<p id="cc-count">0</p>
+				<button id="cc-btn">Bake</button>
+			</div>
+
+			<!-- sugar cookie div -->
+			<div id="sg-box" class="unlock">
+				<h2>Sugar Cookie:</h2>
+				<p id="sg-count">0</p>
+				<button id="sg-btn">Bake</button>
+			</div>
+
+			<!-- snickerdoodle div -->
+			<div id="sn-box" class="unlock">
+				<h2>Snickerdoodle:</h2>
+				<p id="sn-count">0</p>
+				<button id="sn-btn">Bake</button>
+			</div>
+
+			<!-- oatmeal cookie div -->
+			<div id="ot-box" class="unlock">
+				<h2>Oatmeal Raisin:</h2>
+				<p id="ot-count">0</p>
+				<button id="ot-btn">Bake</button>
+			</div>
+		</section>
+
+        <!-- right side of browser window -->
+		<section id="shop-column">
+			<!-- shop div -->
+			<h2>Bake Shop:</h2>
+			<div>
+				<h4>Sugar Cookie Mix</h4>
+				<p>Cost:</p>
+				<p>30 Chocolate Chip</p>
+				<button>Buy</button>
+			</div>
+			<div>
+				<h4>Snickerdoodle Mix</h4>
+				<p>Cost:</p>
+				<p>25 Chocolate Chip</p>
+				<p>25 Sugar Cookies</p>
+				<button>Buy</button>
+			</div>
+			<div>
+				<h4>Oatmeal Raisin Mix</h4>
+				<p>Cost:</p>
+				<p>20 Chocolate Chip</p>
+				<p>20 Sugar Cookies</p>
+				<p>20 Snickerdoodle</p>
+				<button>Buy</button>
+			</div>
+			<div>
+				<h4>Better Oven</h4>
+				<p>Cost:</p>
+				<p>30 Chocolate Chip</p>
+				<p>30 Sugar Cookies</p>
+				<button>Buy</button>
+			</div>
+			<div>
+				<h4>Best Oven</h4>
+				<p>Cost:</p>
+				<p>25 Chocolate Chip</p>
+				<p>25 Sugar Cookies</p>
+				<p>25 Snickerdoodle</p>
+				<p>25 Oatmeal Raisin</p>
+				<button>Buy</button>
+			</div>
+		</section>
+	</body>
+</html>
