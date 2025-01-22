@@ -27,7 +27,7 @@ $(document).ready(function () {
 		}
 	});
 
-    // buy extra tray logic
+    // upgrade tray logic
     let trayCost = 10
     $("#u-tray button").click(function () {
         if (count >= trayCost) {
@@ -38,6 +38,22 @@ $(document).ready(function () {
             }
             trayCost += 10
             $("#u-tray p").text(`Cost: ${trayCost} Cookies`)
+            $("#full").hide();
+        }
+    })
+
+    // upgrade oven logic
+    let ovenCost = 30
+    $("#u-oven button").click(function () {
+        if (count >= ovenCost) {
+            rate += 1
+            count -= ovenCost
+            for (let o = 0; o < ovenCost; o++) {
+                $("#display-case :last-child").remove()
+            }
+            ovenCost += 25
+            $("#u-oven p").text(`Cost: ${ovenCost} Cookies`)
+            $("#full").hide();
         }
     })
 });
