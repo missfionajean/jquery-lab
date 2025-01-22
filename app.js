@@ -1,37 +1,43 @@
-// function definitions
-const cookieBox = (id, button, counter) => {
+const hideItem = (button, id) => {
 	$(button).click(function () {
-		counter += 1;
-		$(id).text(counter);
+		$(box).show();
+		$(this).hide();
 	});
 };
 
-const addBox = (button, box) => {
-    $(button).click(function () {
-		$(box).show()
-        $(this).hide()
-	});
-}
-
-// start extra cookies hidden
-$(".unlock").hide()
+// start with full tray warning hidden
+$("#full").hide();
 
 // game loop
 $(document).ready(function () {
-    // define counters
-	let ccCount = 0;
-    let sgCount = 0;
-    let snCount = 0;
-    let otCount = 0;
+    // cookie tray logic
+	let max = 10;
+	let rate = 1;
+	let count = 0;
+	$("#bake").click(function () {
+		for (let r = 0; r < rate; r++) {
+			if (count < max) {
+				$("#display-case").append(
+					"<img src='images/choc-chip.png' alt='cookie' height='50px' width='50px'>"
+				);
+				count += 1;
+			} else {
+				$("#full").show();
+			}
+		}
+	});
 
-    // event handlers to add new boxes
-    addBox("#buy-sg", "#sg-box")
-    addBox("#buy-sn", "#sn-box")
-    addBox("#buy-ot", "#ot-box")
-
-    // set event handlers for cookie boxes
-	cookieBox("#cc-count", "#cc-btn", ccCount);
-	cookieBox("#sg-count", "#sg-btn", sgCount);
-	cookieBox("#sn-count", "#sn-btn", snCount);
-	cookieBox("#ot-count", "#ot-btn", otCount);
+    // buy extra tray logic
+    let trayCost = 10
+    $("#u-tray button").click(function () {
+        if (count >= trayCost) {
+            max += 10
+            count -= trayCost
+            for (let t = 0; t < trayCost; t++) {
+                $("#display-case :last-child").remove()
+            }
+            trayCost += 10
+            $("#u-tray p").text(`Cost: ${trayCost} Cookies`)
+        }
+    })
 });
